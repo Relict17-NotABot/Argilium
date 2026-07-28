@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -13,7 +15,7 @@ header {
   padding: 1rem 2rem;
 }
 main {
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 1.5rem;
 }
@@ -28,4 +30,208 @@ article {
   border-radius: 8px;
   padding: 0.75rem 1rem;
   margin-top: 0.75rem;
+}
+
+h2 {
+  font-size: clamp(1rem, 4vw, 2.5rem);
+}
+
+h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(0.3rem, 2vw, 2rem);
+}
+
+
+input[type="search"] {
+    width: 100%;
+    padding: 12px 16px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    
+}
+
+input[type="search"]:hover,
+input[type="search"]:focus {
+    border-color: #4f6d5a; /* Color de enfoque */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3); /* Efecto brillante */
+}
+
+input[type="text"], 
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 16px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    
+}
+
+input[type="text"]:hover, 
+input[type="number"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="tel"]:hover,
+input[type="url"]:hover,
+input[type="search"]:hover,
+input[type="date"]:hover,
+textarea:hover,
+select:hover {
+    border-color: #4f6d5a; 
+    box-shadow: 0 0 1rem #4f6d5a; 
+}
+
+input[type="text"]:focus, 
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="date"]:focus,
+textarea:focus, 
+select:focus {
+    border-color: #4f6d5a; 
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3); 
+    
+}
+
+input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    padding: 12px 16px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ff66b2; /* Borde rosa Balatro */
+    border-radius: 4px; /* Bordes más rectos estilo retro */
+    outline: none;
+    transition: 0.15s;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1a0d1a; /* Fondo oscuro tipo juego arcade */
+    cursor: pointer;
+    accent-color: #ff1493; /* Check interno rosa fuerte */
+}
+
+
+input[type="checkbox"]:hover {
+    border-color: #ff1493; 
+    box-shadow: 0 0 1.5rem #ff1493, inset 0 0 0.5rem #ff1493; /* Brillo neón Balatro */
+}
+
+
+.CardServicio {
+  flex: 100;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 27rem;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 7rem;
+    grid-auto-flow: row; 
+}
+
+.Especialidad {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: antiquewhite;
+    color: #665040;
+    width: fit-content;
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+    font-size: clamp(0.8rem, 0.5vw, 3rem);
+    font-weight: bold;
+        height: fit-content;
+}
+
+
+/* --- BOTÓN VER DETALLE (Estilo Café Original) --- */
+.btnVerDetalle {
+    border-radius: 1rem;
+    background-color: white;
+    border: 1px solid #634329;
+    color: #634329;
+    font-size: clamp(0.25rem, 0.8rem, 1.85rem);
+    font-weight: 900;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    padding: 0.2rem;
+}
+
+.btnVerDetalle:hover {
+    background-color: #634329;
+    color: white;
+}
+
+
+/* --- BOTÓN EDITAR (Estilo Azul/Informativo) --- */
+.btnEditar {
+    border-radius: 1rem;
+    background-color: white;
+    border: 1px solid #1d4ed8;
+    color: #1d4ed8;
+    font-size: clamp(0.25rem, 0.8rem, 1.85rem);
+    font-weight: 900;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    padding: 0.5rem;
+}
+
+.btnEditar:hover {
+    background-color: #1d4ed8;
+    color: white;
+}
+
+/* --- BOTÓN ACTIVAR (Estilo Verde) --- */
+.btnActivar {
+    border-radius: 1rem;
+    background-color: white;
+    border: 1px solid #15803d;
+    color: #15803d;
+    font-size: clamp(0.25rem, 0.8rem, 1.85rem);
+    font-weight: 900;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    padding: 0.5rem;
+}
+
+.btnActivar:hover {
+    background-color: #15803d;
+    color: white;
+}
+
+/* --- BOTÓN DESACTIVAR (Estilo Rojo) --- */
+.btnDesactivar {
+    border-radius: 1rem;
+    background-color: white;
+    border: 1px solid #b91c1c;
+    color: #b91c1c;
+    font-size: clamp(0.25rem, 0.8rem, 1.85rem);
+    font-weight: 900;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    padding: 0.5rem;
+}
+
+.btnDesactivar:hover {
+    background-color: #b91c1c;
+    color: white;
 }

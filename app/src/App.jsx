@@ -1,16 +1,15 @@
 import './App.css'
-import { EventPage } from './pages/EventsPage'
+import { NavBar } from './components/NavBar'
 import { HomePage } from './pages/HomePage'
+import { ServicesPage } from './pages/ServicesPage'
 
 export default function App() {
   return (
     <div>
-      <header> 
-        <h1>Sistema de eventos</h1>
-      </header>
+      <NavBar/>
       <main>
         <HomePage />
-        <EventPage />
+        <ServicesPage />
       </main>
     </div>
   )
