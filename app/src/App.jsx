@@ -5,9 +5,9 @@ import { ServicesPage } from './pages/ServicesPage'
 
 export default function App() {
   return (
-    <div>
+    <div className="min-h-screen bg-white">
       <NavBar/>
-      <main>
+      <main className="max-w-7xl mx-auto p-4">
         <HomePage />
         <ServicesPage />
       </main>
