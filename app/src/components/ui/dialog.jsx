@@ -1,4 +1,5 @@
 import * as React from "react"
+import PropTypes from "prop-types"
 import { Dialog as DialogPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
@@ -44,6 +45,10 @@ function DialogOverlay({
   );
 }
 
+DialogOverlay.propTypes = {
+  className: PropTypes.string,
+}
+
 function DialogContent({
   className,
   children,
@@ -74,6 +79,12 @@ function DialogContent({
   );
 }
 
+DialogContent.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
+  showCloseButton: PropTypes.bool,
+}
+
 function DialogHeader({
   className,
   ...props
@@ -84,6 +95,10 @@ function DialogHeader({
       className={cn("flex flex-col gap-2", className)}
       {...props} />
   );
+}
+
+DialogHeader.propTypes = {
+  className: PropTypes.string,
 }
 
 function DialogFooter({
@@ -110,6 +125,12 @@ function DialogFooter({
   );
 }
 
+DialogFooter.propTypes = {
+  className: PropTypes.string,
+  showCloseButton: PropTypes.bool,
+  children: PropTypes.node,
+}
+
 function DialogTitle({
   className,
   ...props
@@ -120,6 +141,10 @@ function DialogTitle({
       className={cn("font-heading text-base leading-none font-medium", className)}
       {...props} />
   );
+}
+
+DialogTitle.propTypes = {
+  className: PropTypes.string,
 }
 
 function DialogDescription({
@@ -135,6 +160,10 @@ function DialogDescription({
       )}
       {...props} />
   );
+}
+
+DialogDescription.propTypes = {
+  className: PropTypes.string,
 }
 
 export {

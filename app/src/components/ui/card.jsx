@@ -1,4 +1,5 @@
 import * as React from "react"
+import PropTypes from "prop-types"
 
 import { cn } from "@/lib/utils"
 
@@ -19,6 +20,11 @@ function Card({
   );
 }
 
+Card.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.string,
+}
+
 function CardHeader({
   className,
   ...props
@@ -32,6 +38,10 @@ function CardHeader({
       )}
       {...props} />
   );
+}
+
+CardHeader.propTypes = {
+  className: PropTypes.string,
 }
 
 function CardTitle({
@@ -49,6 +59,10 @@ function CardTitle({
   );
 }
 
+CardTitle.propTypes = {
+  className: PropTypes.string,
+}
+
 function CardDescription({
   className,
   ...props
@@ -59,6 +73,10 @@ function CardDescription({
       className={cn("text-sm text-muted-foreground", className)}
       {...props} />
   );
+}
+
+CardDescription.propTypes = {
+  className: PropTypes.string,
 }
 
 function CardAction({
@@ -76,6 +94,10 @@ function CardAction({
   );
 }
 
+CardAction.propTypes = {
+  className: PropTypes.string,
+}
+
 function CardContent({
   className,
   ...props
@@ -86,6 +108,10 @@ function CardContent({
       className={cn("px-(--card-spacing)", className)}
       {...props} />
   );
+}
+
+CardContent.propTypes = {
+  className: PropTypes.string,
 }
 
 function CardFooter({
@@ -101,6 +127,10 @@ function CardFooter({
       )}
       {...props} />
   );
+}
+
+CardFooter.propTypes = {
+  className: PropTypes.string,
 }
 
 export {
