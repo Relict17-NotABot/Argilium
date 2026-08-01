@@ -8,6 +8,7 @@ import { ServicesPage } from './pages/ServicesPage'
 import { EmployeesPage } from './pages/EmployeesPage'
 import { CitasPage } from './pages/CitasPage'
 import { SchedulesPage } from './pages/SchedulesPage'
+import { NotFoundPage } from './pages/NotFoundPage'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode >
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/employees" element={<EmployeesPage/>}/>
             <Route path="/appointments" element={<CitasPage/>}/>
             <Route path="/schedules" element={<SchedulesPage/>}/>
+            <Route path="*" element={<NotFoundPage/>} />
           </Route>
         </Routes>
       </BrowserRouter>

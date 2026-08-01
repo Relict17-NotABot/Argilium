@@ -1,0 +1,137 @@
+-- ============================================
+-- BASE DE DATOS: CITAS
+-- ============================================
+
+-- ============================================
+-- ESPECIALIDADES
+-- ============================================
+INSERT INTO especialidades (nombre, descripcion, activo) VALUES 
+('Tarot y Videncia', 'Lectura de cartas y conexión con el plano espiritual', 1),
+('Astrología Caldea', 'Estudio de los astros y cartas astrales especializadas', 1),
+('Magia de Endulzamientos', 'Rituales de endulzamiento y limpieza energética', 1),
+('Meditación Astral', 'Sesiones de meditación y conexión con el plano astral', 1),
+('Estudios de Arcanos Mayores', 'Interpretación profunda de los arcanos del tarot', 1);
+
+-- ============================================
+-- USUARIOS EMPLEADOS (rolId=2)
+-- ============================================
+INSERT INTO usuarios (nombre, primerApellido, segundoApellido, correo, passwordHash, rolId, activo, actualizadoEn) VALUES 
+('Marta', 'Vidente', NULL, 'marta@argilium.com', '$2b$10$S/jufSSFPY060GstEmyfMe0jjcQvFdSfxtdHt1p.6hBwU3HtWrVsu', 2, 1, NOW()),
+('Helios', 'Astral', NULL, 'helios@argilium.com', '$2b$10$S/jufSSFPY060GstEmyfMe0jjcQvFdSfxtdHt1p.6hBwU3HtWrVsu', 2, 1, NOW()),
+('Chaman', 'Oscuro', NULL, 'chaman@argilium.com', '$2b$10$S/jufSSFPY060GstEmyfMe0jjcQvFdSfxtdHt1p.6hBwU3HtWrVsu', 2, 1, NOW()),
+('Buda', 'Luminoso', NULL, 'buda@argilium.com', '$2b$10$S/jufSSFPY060GstEmyfMe0jjcQvFdSfxtdHt1p.6hBwU3HtWrVsu', 2, 1, NOW()),
+('Camila', 'Guiselle', 'Leitón', 'camila@argilium.com', '$2b$10$S/jufSSFPY060GstEmyfMe0jjcQvFdSfxtdHt1p.6hBwU3HtWrVsu', 2, 1, NOW());
+
+-- ============================================
+-- USUARIOS CLIENTES (rolId=3)
+-- ============================================
+INSERT INTO usuarios (nombre, primerApellido, segundoApellido, correo, passwordHash, rolId, activo, actualizadoEn) VALUES 
+('Juan', 'Pérez', NULL, 'juan@correo.com', '$2b$10$S/jufSSFPY060GstEmyfMe0jjcQvFdSfxtdHt1p.6hBwU3HtWrVsu', 3, 1, NOW()),
+('Ana', 'López', NULL, 'ana@correo.com', '$2b$10$S/jufSSFPY060GstEmyfMe0jjcQvFdSfxtdHt1p.6hBwU3HtWrVsu', 3, 1, NOW());
+
+-- ============================================
+-- EMPLEADOS
+-- ============================================
+INSERT INTO empleados (usuarioId, especialidadId, codigoEmpleado, descripcion, activo, actualizadoEn) VALUES 
+(2, 2, 'TAR-001', 'Vidente nata con mas de 20 anos de experiencia en el arte del Tarot de Marsella. Marta ha guiado a miles de personas en su camino espiritual, combinando la sabiduria ancestral con una intuicion innata. Es conocida por su capacidad de conectar profunda y rapidamente con la energia de sus consultantes, ofreciendo claridad en los momentos de mayor confusion.', 1, NOW()),
+(3, 3, 'AST-002', 'Astrologo caldeo de renombre internacional, Helios domina el arte de la carta astral y la sinastria. Formado en las tradiciones mas antiguas de la astrologia mesopotamica, ha dedicado su vida a descifrar los secretos que los astros guardan para cada alma. Sus consultas revelan los ciclos mas importantes de la vida y las oportunidades que el universo presenta.', 1, NOW()),
+(4, 4, 'END-003', 'Maestro en rituales de endulzamiento y limpieza energetica con raices en tradiciones milenarias del sur. Chaman ha estudiado con sabios de diferentes culturas, aprendiendo el poder transformador de las hierbas, los sahumerios y las oraciones. Especialista en armonizar relaciones de pareja y eliminar bloqueos energeticos que impiden el bienestar.', 1, NOW()),
+(5, 5, 'MED-004', 'Guia de meditacion astral con formacion en tradiciones budistas y pratice oriental. Buda ha dedicado su vida a la busqueda de la paz interior y la conexion con los planos superiores. Sus sesiones de meditacion son puertas abiertas hacia el autoconocimiento, permitiendo a sus consultantes encontrar calma, direccion y sanacion profunda.', 1, NOW()),
+(8, 6, 'TAR-005', 'Estudiante prodigio del Instituto de la Gran Melitele, con estudios profundos en Arcanos Mayores. Camila ha sido bendecida con grandes dones que ha sabido practicar y perfeccionar desde muy joven. Su connexion con los arcanos es excepcional, ofreciendo interpretaciones que van mas alla de lo superficial, revelando verdades ocultas con precision y sensibilidad.', 1, NOW());
+
+-- ============================================
+-- SERVICIOS
+-- ============================================
+INSERT INTO servicios (nombre, descripcion, precioBase, duracionMinutos, especialidadId, activo, actualizadoEn) VALUES 
+('Lectura de Tarot', 'Consulta completa de 45 min', 50.00, 45, 2, 1, NOW()),
+('Limpieza de Aura', 'Eliminación de energías negativas', 75.00, 60, 2, 1, NOW()),
+('Carta Astral', 'Mapa del cielo al nacer', 100.00, 90, 3, 1, NOW()),
+('Endulzamiento de Pareja', 'Ritual de armonización sentimental', 150.00, 120, 4, 1, NOW()),
+('Lectura de Cartas', 'Sesión de interpretación de cartas', 40.00, 30, 2, 1, NOW()),
+('Sesión de Meditación Astral', 'Conexión con el plano astral guiada', 60.00, 60, 5, 1, NOW()),
+('Estudio de Arcanos Mayores', 'Interpretación profunda del tarot', 120.00, 90, 6, 1, NOW());
+
+-- ============================================
+-- SERVICIOS ADICIONALES
+-- ============================================
+INSERT INTO servicios_adicionales (nombre, descripcion, precio, activo, actualizadoEn) VALUES 
+('Velas Especiales', 'Kit de velas consagradas', 15.00, 1, NOW()),
+('Incienso Sagrado', 'Resinas naturales para el hogar', 10.00, 1, NOW()),
+('Cristal de Cuarzo', 'Piedra cargada energéticamente', 25.00, 1, NOW()),
+('Agua Bendita', 'Frasco de protección', 5.00, 1, NOW()),
+('Protección Espiritual', 'Amuleto de mano', 30.00, 1, NOW()),
+('Lectura de Runas', 'Complemento al tarot', 20.00, 1, NOW()),
+('Sahumerio Extra', 'Limpieza profunda de hogar', 40.00, 1, NOW()),
+('Aceite de Ritual', 'Mezcla alquímica personalizada', 18.00, 1, NOW());
+
+-- ============================================
+-- SERVICIOS POR EMPLEADO
+-- ============================================
+INSERT INTO _EmpleadoServicios (A, B) VALUES 
+-- Marta: Lectura de Tarot(1), Limpieza de Aura(2), Lectura de Cartas(5), Estudio de Arcanos Mayores(7)
+(1, 1), (1, 2), (1, 5), (1, 7),
+-- Helios: Carta Astral(3), Lectura de Tarot(1), Estudio de Arcanos Mayores(7)
+(2, 3), (2, 1), (2, 7),
+-- Chaman: Endulzamiento de Pareja(4), Limpieza de Aura(2), Lectura de Cartas(5)
+(3, 4), (3, 2), (3, 5),
+-- Buda: Sesion de Meditacion Astral(6), Limpieza de Aura(2), Lectura de Cartas(5)
+(4, 6), (4, 2), (4, 5),
+-- Camila: Lectura de Tarot(1), Lectura de Cartas(5), Estudio de Arcanos Mayores(7)
+(5, 1), (5, 5), (5, 7);
+
+-- ============================================
+-- RESTRICCIONES HORARIO
+-- ============================================
+INSERT INTO restricciones_horario (tipoRestriccionId, empleadoId, fecha, todoElDia, motivo, activo, actualizadoEn) VALUES 
+-- General: Eclipse Lunar
+(1, NULL, '2026-09-15', 1, 'Eclipse Lunar - Establecimiento cerrado', 1, NOW()),
+-- General: Noche de Halloween
+(1, NULL, '2026-10-31', 1, 'Noche de Halloween - Establecimiento cerrado', 1, NOW()),
+-- General: Noche de San Bartolo
+(1, NULL, '2026-12-23', 1, 'Noche de San Bartolo - Establecimiento cerrado', 1, NOW()),
+(1, NULL, '2026-12-24', 1, 'Noche de San Bartolo - Establecimiento cerrado', 1, NOW()),
+-- Empleado: Marta capacitacion
+(2, 1, '2026-09-18', 0, 'Capacitacion avanzada en Tarot - Marta', 1, NOW()),
+-- Empleado: Helios reunion
+(2, 2, '2026-09-20', 0, 'Reunión internacional de astrologia - Helios', 1, NOW()),
+-- Empleado: Chaman cita medica
+(2, 3, '2026-09-19', 0, 'Cita medica personal - Chaman', 1, NOW()),
+-- Empleado: Buda retiro
+(2, 4, '2026-09-22', 0, 'Retiro espiritual privado - Buda', 1, NOW()),
+-- Empleado: Camila examen
+(2, 5, '2026-09-25', 0, 'Examen final del Instituto de la Gran Melitele - Camila', 1, NOW()),
+-- Parcial: Mediodia general
+(3, NULL, '2026-09-16', 0, 'Almuerzo grupal del establecimiento', 1, NOW()),
+-- Parcial: Tarde general
+(3, NULL, '2026-09-23', 0, 'Mantenimiento general del local', 1, NOW()),
+-- Dia completo: Semana Santa
+(4, NULL, '2026-04-02', 1, 'Semana Santa - Establecimiento cerrado', 1, NOW()),
+(4, NULL, '2026-04-03', 1, 'Semana Santa - Establecimiento cerrado', 1, NOW());
+
+-- ============================================
+-- CITAS (4 pendientes, 4 confirmadas, 3 finalizadas, 2 canceladas)
+-- ============================================
+INSERT INTO citas (clienteId, empleadoId, servicioId, estadoCitaId, creadoPorUsuarioId, fecha, horaInicio, horaFin, duracionMinutos, precioServicio, costoTotal, actualizadoEn) VALUES 
+-- PENDIENTES (estadoCitaId=1)
+(6, 1, 1, 1, 1, '2026-08-05', '09:00:00', '09:45:00', 45, 50.00, 65.00, NOW()),
+(7, 2, 3, 1, 1, '2026-08-06', '10:00:00', '11:30:00', 90, 100.00, 110.00, NOW()),
+(6, 3, 4, 1, 1, '2026-08-07', '14:00:00', '16:00:00', 120, 150.00, 165.00, NOW()),
+(7, 5, 7, 1, 1, '2026-08-08', '11:00:00', '12:30:00', 90, 120.00, 130.00, NOW()),
+-- CONFIRMADAS (estadoCitaId=2)
+(6, 4, 6, 2, 1, '2026-08-01', '08:00:00', '09:00:00', 60, 60.00, 75.00, NOW()),
+(7, 1, 2, 2, 1, '2026-08-02', '10:00:00', '11:00:00', 60, 75.00, 85.00, NOW()),
+(6, 2, 1, 2, 1, '2026-08-03', '13:00:00', '13:45:00', 45, 50.00, 60.00, NOW()),
+(7, 5, 5, 2, 1, '2026-08-04', '15:00:00', '15:30:00', 30, 40.00, 45.00, NOW()),
+-- FINALIZADAS (estadoCitaId=4)
+(6, 1, 5, 4, 1, '2026-07-28', '09:00:00', '09:30:00', 30, 40.00, 50.00, NOW()),
+(7, 3, 2, 4, 1, '2026-07-29', '11:00:00', '12:00:00', 60, 75.00, 90.00, NOW()),
+(6, 4, 6, 4, 1, '2026-07-30', '14:00:00', '15:00:00', 60, 60.00, 70.00, NOW()),
+-- CANCELADAS (estadoCitaId=5)
+(7, 2, 3, 5, 1, '2026-07-25', '09:00:00', '10:30:00', 90, 100.00, 100.00, NOW()),
+(6, 5, 1, 5, 1, '2026-07-26', '16:00:00', '16:45:00', 45, 50.00, 50.00, NOW());
+
+-- ============================================
+-- CREDENCIALES DE LOGIN
+-- ============================================
+-- Admin: admin@citas.com / Admin12345
+-- Empleados/Clientes: password123
