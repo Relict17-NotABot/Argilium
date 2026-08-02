@@ -8,8 +8,8 @@ export async function getServices() {
         }
         return await response.json()
     } catch (error) {
-        console.log("Error al obtener eventos: "+ error);
-        throw new Error("Error al obtener eventos")
+        console.log("Error al obtener servicios: "+ error);
+        throw new Error("Error al obtener servicios")
         
     }
 }

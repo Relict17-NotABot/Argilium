@@ -6,7 +6,7 @@ export function EmployeesPage(){
     const [employees, setEmployees] = useState([]);
     const [search, setSearch] = useState("");
     const [selectedEspecialidad, setSelectedEspecialidad] = useState("");
-  
+
     useEffect(() => {
         async function fetchEmployees() {
             try {
@@ -22,8 +22,7 @@ export function EmployeesPage(){
     const filteredEmployees = employees.filter(employee => {
         const fullName = `${employee.usuario.nombre} ${employee.usuario.primerApellido}`.toLowerCase();
         const matchesSearch = fullName.includes(search.toLowerCase());
-        const matchesEspecialidad = selectedEspecialidad === "" ||
-                                     employee.especialidad.nombre === selectedEspecialidad;
+        const matchesEspecialidad = selectedEspecialidad === "" || employee.especialidad.nombre === selectedEspecialidad;
         return matchesSearch && matchesEspecialidad;
     });
 
