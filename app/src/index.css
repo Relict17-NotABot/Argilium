@@ -44,7 +44,7 @@ article {
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: clamp(2rem, 3.5vw, 2.3rem);
 }
 
 h1 {
@@ -52,8 +52,10 @@ h1 {
 }
 
 h3 {
-  font-size: clamp(0.3rem, 2vw, 2rem);
+  font-size: clamp(0.9rem, 1.5vw, 2rem);
 }
+
+
 
 label {
   font-size: clamp(1rem, 2vw, 1.5rem);

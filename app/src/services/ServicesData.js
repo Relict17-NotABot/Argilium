@@ -13,3 +13,15 @@ export async function getServices() {
         
     }
 }
+
+export async function getServicesById(id) {
+    try {
+        const response = await fetch(`${API_URL}/servicios/${id}`);
+        if (!response.ok) {
+            throw new Error();
+        }
+        return await response.json();
+    } catch {
+        throw new Error("No se pudo cargar el detalle del servicio.");
+    }
+}

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export function ServiceCard({ service }) {
     const URL = import.meta.env.VITE_IMAGE_URL
@@ -34,12 +35,11 @@ export function ServiceCard({ service }) {
             </div>
             </div>
             <div className="flex flex-row gap-2 flex-1 items-center">
+                <Link to={`/services/${service.id}`}> 
                 <button className=" bg-[#9b111e] text-white px-3 py-2 rounded-lg hover:bg-[#381f22] transition-colors text-sm font-medium w-fit h-fit ">
                     Ver detalle
                 </button>
-                <button className=" bg-[#b95887] text-white px-3 py-2 rounded-lg hover:bg-[#381f22] transition-colors text-sm font-medium w-fit h-fit">
-                    Editar
-                </button>
+                </Link>
                 <button className=" bg-[#ce6f99] text-white px-3 py-2 rounded-lg hover:bg-[#381f22] transition-colors text-sm font-medium w-fit h-fit">
                     Activar
                 </button>
@@ -50,6 +50,7 @@ export function ServiceCard({ service }) {
 
 ServiceCard.propTypes = {
     service: PropTypes.shape({
+        id: PropTypes.number.isRequired,
         nombre: PropTypes.string.isRequired,
         especialidad: PropTypes.shape({
             nombre: PropTypes.string.isRequired
